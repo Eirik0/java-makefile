@@ -91,4 +91,4 @@ clean:
 	
 ### Remove the jar archive and all class files ###
 cleanall:
-	$(RM) $(JAR_FILE) $(call filter_find,$(CLASS_DIR),.class)
+	rm -rf $(JAR_FILE) $(CLASS_DIR)

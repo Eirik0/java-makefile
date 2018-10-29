@@ -19,7 +19,7 @@ Note: If the project depends on other projects or jar files, additional changes 
 - `all` - Compiles the `.java` files and places the corresponding `.class` files in a `.jar` archive. This is the default rule.
 - `run` - Compiles and runs the `.jar` file.
 - `clean` - Removes the `.jar` file and `.class` files corresponding to the `.java` files.
-- `cleanall` - Removes the `.jar` file and all `.class` files.
+- `cleanall` - Removes the `.jar` file as well as the class directory and all its contents
 
 ### How it works
-The makefile will recursively find all `.java` files is a specified source directory (`src`). It then creates rules to compile those files and place them in a specified class folder (`bin`) while maintaining their file paths relative to the source directory. The default rule `all` depends on the compiled `.class` files and will create a runnable `.jar` archive.
+The makefile will recursively find all `.java` files is a specified source directory (`src`). It then creates rules to compile those files and place them in a specified class directory (`bin`) while maintaining their file paths relative to the source directory. The default rule `all` depends on the compiled `.class` files and will create a runnable `.jar` archive.
