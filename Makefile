@@ -12,9 +12,9 @@ filter_find = $(filter %$2,$(call find_files,$1,*$2))
 ### Configuration for sources file and compilation artefacts ###
 
 # The name of the jar file to create
-JAR_FILE := jarfile.jar
+JAR_FILE := make-test.jar
 # The class containing `public static void main(String[] args)`
-MAIN_CLASS := main.Main
+MAIN_CLASS := main.MakeTestMain
 
 # The directory containing the `.java` files
 SOURCE_DIR := src
@@ -43,7 +43,7 @@ MAKEFLAGS += --no-builtin-rules
 .SUFFIXES:
 .SUFFIXES: .java .class
 # Define phony targets
-.PHONY: all run clean cleanall
+.PHONY: all classes run clean cleanall
 
 
 ### Rules ###
@@ -65,6 +65,9 @@ JAVACFLAGS := \
 # javac [ options ] [ sourcefiles ] [ classes ] [ @argfiles ]
 $(CLASS_DIR)/%.class: $(SOURCE_DIR)/%.java | $(CLASS_DIR)
 	$(JAVAC) $(JAVACFLAGS) $<
+
+### Make all `.class` files ###
+classes: $(CLASS_FILES)
 
 ### Copy `.class` files to the `.jar` archive ###
 # Java archiving and compression tool

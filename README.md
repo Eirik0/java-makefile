@@ -17,6 +17,7 @@ Note: If the project depends on other projects or jar files, additional changes 
 
 ### Rules
 - `all` - Compiles the `.java` files and places the corresponding `.class` files in a `.jar` archive. This is the default rule.
+- `classes` - Compiles all `.java` files to `.class` files
 - `run` - Compiles and runs the `.jar` file.
 - `clean` - Removes the `.jar` file and `.class` files corresponding to the `.java` files.
 - `cleanall` - Removes the `.jar` file as well as the class directory and all its contents
